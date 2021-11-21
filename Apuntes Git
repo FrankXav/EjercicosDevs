@@ -1,0 +1,117 @@
+Apuntes Git
+GIT es un sistema distribuido de control de versiones, gratuito y de código abierto, diseñado para administrar todo desde un proyecto pequeño hasta uno grande con velocidad y eficiencia.
+Configurar Git
+> git config --global user.name "Your-Full-Name"
+> git config --global user.email "your-email-address"
+> git config --global color.ui auto
+> git config --list
+
+Repositorios 
+Un repositorio de Git es un almacenamiento virtual de tu proyecto. Te permite guardar versiones del código a las que puedes acceder cuando lo necesites.
+
+Crear Repositorio
+
+> mkdir (Nombre del repositorio sin parentesis)
+> cd (Nombre del repositorio sin parentesis)
+>> ls -la
+
+Agregar archivo al repositorio
+> git status
+> cat > indice.txt //Crear archivo en .txt
+Capítulo 1: Introducción a Git
+Capítulo 2: Flujo de trabajo básico Capítulo
+3: Repositorios remotos
+Ctrl+D //Salir cat
+> git status
+> git add indice.txt
+> git status
+Realizar un commit de los últimos cambios con el mensaje “Añadido índice del libro.” y ver el estado del repositorio.
+> git commit -m "Añadido índice del libro."
+ git status
+Agregar una linea a indice.txt y mostrar cambios
+> cat > indice.txt
+Capítulo 1: Introducción a Git
+Capítulo 2: Flujo de trabajo básico
+Capítulo 3: Gestión de ramas
+Capítulo 4: Repositorios remotos Ctrl+D
+> git diff
+> git add indice.txt
+> git commit -m "Añadido capítulo 3 sobre gestión de ramas"
+Modificar ultimo commit
+> git show
+> git commit --amend -m "Añadido capítulo 3 sobre gestión de ramas al índice."
+>git show
+Añadir cambios a la zona de inercambio temporal
+> git log
+> mkdir capitulos
+> cat
+> capitulos/capitulo1.txt
+Git es un sistema de control de versiones ideado por Linus Torvalds. Ctrl+D
+> git add . // añade archivos a la zona de intercambio temporal
+> git commit -m "Añadido capítulo 1."
+> git log //muestra los versiones 
+
+Flujos de trabajo
+Centralizado: Se trabaja sobre la rama central (master), se usa un historial lineal usando Rebase.
+
+GitFlow:Utiliza un diseño de ramas especificas el cual asigna una funcion especifica a cada una de ellas, ademas de usar las ramas caracteristicas o funcionalidad como el future release
+Crear una nueva rama 
+> git checkout -b "nombre rama"
+Cmbiar entre ramas
+>git checkout "nombre rama"
+
+Crear rama y ver cambios en git 
+# Hacer el fork del repositorio asalber/libro-git en GitHub y copiar la url del repositorio creado en la cuenta de GitHub del usuario.
+> git clone url
+> git checkout -b autoria
+   # Editar con nano el fichero autores.txt y añadir el nombre y el correo electrónico del usuario en una nueva línea.
+> git commit -am "Añadido nuevo autor."
+> git push origin autoria
+# Ir al repositorio remoto en GitHub y hacer clic en el botón Compare & Pull Request y después completar la solicitud haciendo clic en el botón Create Pull Request.
+
+Flujo de trabajo basado en ramas 
+No se trabaja en la rama master, en las demas ramas se desarrollara una caracteristica o funcion especifica
+
+Actualizar repositorio local
+>git pull origin master  
+
+Ayuda comando 
+>git help <comando>
+>man git-<comando>
+
+Ignorar archivos
+crear un archivo llamado .gitignore, en el que listas los patrones de nombres que deseas que sean ignorados
+
+>git diff para ver ultimos cambios
+
+
+>git commit -v para agregar los cambios al commit 
+
+Ver historial de cambios 
+>git log
+
+Opciones de git log
+
+-p Muestra el parche introducido en cada confirmación.
+--stat   Muestra estadísticas sobre los archivos modificados en cada confirmación.
+--shortstat Muestra solamente la línea de resumen de la opción --stat.
+--name-only Muestra la lista de archivos afectados.
+--name-status  Muestra la lista de archivos afectados, indicando además si fueron añadidos, modificados o eliminados.
+--abbrev-commit   Muestra solamente los primeros caracteres de la suma SHA-1, en vez de los 40 caracteres de que se compone.
+--relative-date   Muestra la fecha en formato relativo (por ejemplo, “2 weeks ago” (“hace 2 semanas”)) en lugar del formato completo.
+--graph  Muestra un gráfico ASCII con la historia de ramificaciones y uniones.
+--pretty Muestra las confirmaciones usando un formato alternativo. Posibles opciones son oneline, short, full, fuller, y format (mediante el cual puedes especificar tu propio formato).
+-(n)  Muestra solamente las últimas n confirmaciones
+--since, --after  Muestra aquellas confirmaciones hechas después de la fecha especificada.
+--until, --before Muestra aquellas confirmaciones hechas antes de la fecha especificada.
+--author Muestra sólo aquellas confirmaciones cuyo autor coincide con la cadena especificada.
+--committer Muestra sólo aquellas confirmaciones cuyo confirmador coincide con la cadena especificada.
+
+
+Cambiar el comentario de commit
+>git commit --amend
+
+
+ver ramas de proyecto 
+gitk --all
+

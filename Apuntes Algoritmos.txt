@@ -1,0 +1,25 @@
+Apuntes Algoritmos
+Es una lista paso a paso finita de las instrucciones para resolver un problema 
+
+Caracteristicas:
+-Presicion:Debe expresarse sin ambiguedad
+-Determinismo: Debe responder del mismo modo ante las mismas condiciones
+-Finito
+
+Cualidades de un algoritmo:
+-General:Es deseable que sea apaz de resolver una clase de problemas lo más amplia posible
+-Eficiente:Menos recurso en tiempo, espacio de memoria y procesamiento que consume
+
+Complejidad en algoritmos:
+Es independiente del procesamiento 
+
+Notacion Big O:
+O(1):Complejidad constante
+O(n):Complejidad lineal - Crece de forma lineal conforme la complejidad de los datos
+O(log n):Complejidad Logaritmica - Es más rapido que el lineal, pero el tiempo crece dependiendo la cantidad de datos
+O(n^2):Complejidad cuadratica 
+O(2^n):Complejidad Exponencial
+
+Costo computacional: https://www.bigocheatsheet.com/
+
+Distancia de Levenshtein
