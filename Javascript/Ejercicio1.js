@@ -1,12 +1,19 @@
 let a;
 let b;
 
-a=6;
-b=4
+a=-2;
+b=4;
+
+
 
 function SolveMeFirst(num1,num2){
-	return num1+num2
+	if (num1<=1 && num2<=1000){
+        return num1+num2
+    } else{
+        return "No cumple las restricciones"
+    }
+    
 }
 
 
-console.log(SolveMeFirst(6,4))
+console.log(SolveMeFirst(a,b))
