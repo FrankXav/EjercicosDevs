@@ -1,45 +1,8 @@
 import time
 import os
-
-def Quitarresp(Respuesta):
-    if(Respuesta[-1]==" "):
-        Respuesta=Respuesta[:-1]
-        #print(Respuesta)
-        if(Respuesta[-1]==" "):
-            Respuesta=Quitarresp(Respuesta)   
-    return Respuesta
-    
-def formpreg(instruccion,pista,solucion):
-    solcorr=True
-    while(solcorr):
-        print(instruccion)
-        resp=input()
-        resp=Quitarresp(resp)
-
-        if(solucion == resp):
-            print("Correcto")
-            solcorr=False
-            time.sleep(3)
-            os.system("cls") 
-        elif("pista"== resp ):
-            print(pista)
-        elif("respuesta" == resp):
-            print("La respuesta es: ", solucion)
-            solcorr=False
-            time.sleep(3)
-            os.system("cls") 
-        else:
-            print("Intenta de nuevo :c o pide una pista")
-            time.sleep(3)
-            os.system("cls")
-
-def Mostarinfo(texto):
-    entendio="no"
-    while(entendio!="si"): 
-        print(texto)
-        entendio=input("\nDesea continuar? (si o no): ")
-        os.system("cls")
-  
+from funciones import Mostarinfo
+from funciones import Quitarresp
+from funciones import formpreg
 Comprendio=1
 while(Comprendio!=0):   
     print('''Proyecto Git
@@ -66,7 +29,7 @@ Git modela sus datos más como un conjunto de instantáneas de un mini sistema d
 un cambio, o guardas el estado de tu proyecto en Git, él básicamente hace una foto del aspecto de todos tus 
 archivos en ese momento, y guarda una referencia a esa instantánea.\n''')
 
-pregunta1 = input("En pocas palabras que es Git?: ")
+pregunta1 = Quitarresp(input("En pocas palabras que es Git?: "))
 
 if(not ("control de versiones" in pregunta1)):
     print("\nLa respuesta es 'Es un sitema de control de versiones que modela sus datos como un conjunto de instantaneas'")
@@ -172,5 +135,8 @@ texto8='''git push origin master:
     por default de github (mas adelante se hablaran de las ramas)'''
 Mostarinfo(texto8)
 print("Segunda ronda de preguntas!!!!")
-time.sleep(4)
+time.sleep(3)
 os.system("cls")
+
+
+
