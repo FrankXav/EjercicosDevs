@@ -36,5 +36,5 @@ def Mostarinfo(texto):
     entendio="no"
     while(entendio!="si"): 
         print(texto)
-        entendio=Quitarresp(input("\nDesea continuar? (si o no): "))
+        entendio=Quitarresp(input("\nDesea continuar? (si o no): ").lower())
         os.system("cls")

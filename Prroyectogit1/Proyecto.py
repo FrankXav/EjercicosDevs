@@ -3,6 +3,8 @@ import os
 from funciones import Mostarinfo
 from funciones import Quitarresp
 from funciones import formpreg
+
+
 Comprendio=1
 while(Comprendio!=0):   
     print('''Proyecto Git
@@ -12,7 +14,7 @@ while(Comprendio!=0):
         1.- Lee bien la informacion y las instrucciones al momentoo de resolver un ejercicio
         2.- Es importante que intentes contestar con lo que recuerdes antes de pedir la pista o la respuesta
         3.- Repite la ejecucion de este programa las veces que sean necesarias
-        4.- Exprimenta con una propia carpeta''')
+        4.- Exprimenta con una carpeta propia''')
     Comprendio=int(input("\nPrimera pregunta ¿Cuantas veces se menciono a la vaca en el texto?: "))
     if(Comprendio!=0):
         print("\n Claramente no leiste las instrucciones, Vuelve a leer e inteta de nuevo :(")
@@ -112,7 +114,7 @@ texto5='''git diff:
     Este comando te indica los cambios que has hecho y que todavía no has preparado'''
 Mostarinfo(texto5)
 
-texto6='''git comit -m "comentario":
+texto6='''git commit -m "comentario":
     Crea una confirmacion del estado actual del proyecto. Las confirmaciones se pueden concebir 
     como instantáneas o hitos en el cronograma de un proyecto de Git.
     En pocas palabras el la forma en la que guardamos los cambios de nuestro repositorio local
@@ -138,5 +140,119 @@ print("Segunda ronda de preguntas!!!!")
 time.sleep(3)
 os.system("cls")
 
+inst5='''Primero
+    Supongamos que despues de un largo dia de trabajo, ya no sabemos ni que archivos modificamos o que
+    cambios hicimos a nuestro repositorio. Que comando podria ayudarnos?'''
+sol5="git diff"
+pista5="El comando esa abreviacion de diferencia"
+formpreg(inst5,pista5,sol5)
+
+inst6='''Segundo
+    En el proyecto que estamos trabajando agregamos un archivo makefile que nos permitira armar el ejecutable
+    desde la terminal. Ya comprobamos que todo sirve y queremos hacer una confirmacion.
+    Como el cambio que hicimos fue agregar el archivo makefile el comentario debera ser 
+    "Makefile agregado". ¿Que comando utilizamos?'''
+sol6='git commit -m "Makefile agregado"'
+pista6="Este comando nos permite hacer una confirmacion de nuestro repositorio con un comentario"
+formpreg(inst6,pista6,sol6)
+
+inst7='''Tercero
+    Queremos saber los archivos que hemos cambiado y los archivos que no hemos preparado para 
+    saber si es necesario ocupar el comando git add. Cual es el comando ideal?'''
+sol7='git status'
+pista7="Queremos ver el estatus de nuestro repositorio"
+formpreg(inst7,pista7,sol7)
+
+inst8='''Cuarto
+    Que comando ocupariamos si queremos subir nuestros cambios a un repositorio remoto?'''
+sol8='git push origin'
+pista8="Podriamos decir que empujamos los nuevos archivos al repositorio origen"
+formpreg(inst8,pista8,sol8)
 
 
+texto6= '''Llego el momento de hablar de las ramas en Github
+Cuando hablamos de branching o trabajo con ramas, significa que tu has tomado la rama 
+principal de desarrollo (master) y a partir de ahí has continuado trabajando sin seguir la rama 
+principal de desarrollo.
+Se recomienda investigar un poco más sobre que es una rama pero por temas practicos nos pasaremos
+a los comando que nos ayudaran a manejar estas ramas'''
+Mostarinfo(texto6)
+
+texto7='''git checkout -b "Nombre rama nueva"
+Primero como creamos una nueva rama, ocuparemos este comando para crear una rama nueva 
+y cambiarnos a ella para seguir trabajando a partir de ella
+Por ejemplo queremos crear una rama llama ResBug2 para resolver un problema en el codigo sin 
+modificar el codigo que funciona en la rama master 
+el comando a utilizar seria: git checkout -b ResBug2'''
+Mostarinfo(texto7)
+
+texto8 = '''git checkout "nombre rama"
+Ahora ya creamos una nueva rama y nos encontramos en ella, pero queremos seguir avanzando en 
+la rama master para implementar una nueva funcion a nuestro prroyecto 
+Para cambiar a la rama master ocupariamos git checkout master
+Y asi para cambiar entre cualquiera de las ramas ya creadas'''
+Mostarinfo(texto8)
+
+texto9 = '''git push origin "nombre rama"
+Ahora que ya sabemos que se puede tarbajar en diferentes ramas a la vez, podemos ocupar
+el comando push para subir los cambios que hicimos en una nueva rama a el repositorio
+remoto y poder tener acceso a los cambios en cualquier lugar.
+Si queremos subir los cambio en la rama ResBug2 ocupariamos: git push origin ResBug2'''
+Mostarinfo(texto9)
+
+texto10 = '''git merge "nombre rama"
+Bien ahora supongamos que resolvimos los errores en la rama ResBug2 y los queremos implementar
+a la rama master. Para esto ocuparemos el comando merge desde la rama a la que queremos agregarle, los
+cambios en este caso la master.
+El comando seria asi git merge ResBug2'''
+Mostarinfo(texto10)
+
+texto11 = '''git pull origin "nombre rama"
+Si queremos acualizar la rama con la que estamos trabajando desde una rama dentro del repositorio remoto
+ocupariamos el comando pull, donde "nombre rama"=al nombre de la rama de donde queremos tomar los cambios 
+para actualizar nuestra rama actual'''
+Mostarinfo(texto11)
+
+texto12 = '''git branch -d "nombre rama"
+Este comando nos permitira eliminar una rama que ya no ocupemos o este obsoleta'''
+Mostarinfo(texto12)
+
+texto13 = '''Ahora ya sabemos los comando basicos para trabajar con ramas
+Es hora de ronda de preguntas!!!'''
+Mostarinfo(texto13)
+
+inst9='''Primero
+    Que comando tenemos que ocupar queremos crear una nueva rama llamada prueba?'''
+sol9='git checkout -b prueba'
+pista9="El comando es checkout con la opcion -b"
+formpreg(inst9,pista9,sol9)
+
+inst10='''Segundo 
+    Si nos encontramos en una rama llamada DebugError como podemos regresar a la 
+    rama master'''
+sol10='git checkout master'
+pista10="El comando es parecido al problema anterior"
+formpreg(inst10,pista10,sol10)
+
+inst11='''Tercero
+    Que comando tenemos que utilizar si deseamos subir los cambios de una rama llamada Versionp a 
+    nuestro repsitorio remoto?'''
+sol11='git push origin Versionp'
+pista11="Se ocupa el mismo comando que para subir los cambios de la rama master, pero cambiando\n por el nombre de la rama"
+formpreg(inst11,pista11,sol11)
+
+inst11='''Cuarta
+    Si queremos eliminar una rama, que comando ocupamos, suponiendo que la rama que queremos 
+    elimar se llama "pruebas"?'''
+sol11='git branch -d pruebas '
+pista11="Se ocupa el mismo comando que para subir los cambios de la rama master, pero cambiando\n por el nombre de la rama"
+formpreg(inst11,pista11,sol11)
+
+
+texto14 = '''Felicidades llegaste al final de este programa pensado para que puedas a empezar a ocupaar 
+git, recuerda que siempre es importante seguir aprendiendo y te recomendamos la siguiente pagina
+que tiene una muy buena explicaion de git https://uniwebsidad.com/libros/pro-git
+
+Fin'''
+
+Mostarinfo(texto14)
